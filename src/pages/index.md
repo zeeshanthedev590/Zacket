@@ -1,5 +1,5 @@
 ---
-title: Welcome to Zacket
+title: Welcome to Zacket - The simplest static site generator
 author: Zeeshan Khalid
 ---
 
