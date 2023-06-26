@@ -21,9 +21,12 @@ const template = fs.readFileSync(
 const templatize = (template, { title, content, author, time }) =>
   template
     //   Add your comments here to add them to the template
+    .replace(
+      /<!-- default-styles -->/g,
+      `<link rel="stylesheet" href="/src/styles/styles.css">`
+    )
     .replace(/<!-- content -->/g, content)
     .replace(/<!-- author -->/g, author)
-    .replace(/<!-- date -->/g, time)
     .replace(/<!-- title -->/g, title);
 
 const saveFile = (filename, contents) => {
@@ -45,7 +48,6 @@ const outPath = path.join(path.resolve(), "dist");
 const outFilename = getOutputFilename(filename, outPath);
 const templatized = templatize(template, {
   // After adding the comments above address them here to call them into action
-  time: file.data.time,
   title: file.data.title,
   content: file.html,
   author: file.data.author,

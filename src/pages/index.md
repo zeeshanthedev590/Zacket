@@ -1,7 +1,8 @@
 ---
-title: Hello World
+title: Welcome to Zacket
 author: Zeeshan Khalid
-time: 2016 august 2016
 ---
 
-# this is really good we will call it zacket
+Edit the <code>/src/pagesindex.md</code> to add content
+
+Add .md files in the <code>/src/pages/</code> folder to make more pages
