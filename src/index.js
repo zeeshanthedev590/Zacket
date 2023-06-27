@@ -25,6 +25,22 @@ const templatize = (template, { title, content, author, sub }) =>
       /<!-- default-styles -->/g,
       `<link rel="stylesheet" href="/styles/styles.css">`
     )
+    .replace(
+      /<!-- tailwind-cdn -->/g,
+      `<script src="https://cdn.tailwindcss.com"></script>`
+    )
+    .replace(
+      /<!-- bootstrap-css-cdn -->/g,
+      `<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css'>`
+    )
+    .replace(
+      /<!-- bootstrap-js-cdn -->/g,
+      `<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>`
+    )
+    .replace(
+      /<!-- bulma-cdn -->/g,
+      `<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">`
+    )
     .replace(/<!-- content -->/g, content)
     .replace(/<!-- author -->/g, author)
     .replace(/<!-- sub -->/g, sub)
