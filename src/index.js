@@ -15,18 +15,19 @@ const readFile = (filename) => {
   return { ...parsed, html };
 };
 const template = fs.readFileSync(
-  path.join(path.resolve(), "src/template.html"),
+  path.join(path.resolve(), "src/baseof.html"),
   "utf8"
 );
-const templatize = (template, { title, content, author, time }) =>
+const templatize = (template, { title, content, author, sub }) =>
   template
     //   Add your comments here to add them to the template
     .replace(
       /<!-- default-styles -->/g,
-      `<link rel="stylesheet" href="/src/styles/styles.css">`
+      `<link rel="stylesheet" href="/styles/styles.css">`
     )
     .replace(/<!-- content -->/g, content)
     .replace(/<!-- author -->/g, author)
+    .replace(/<!-- sub -->/g, sub)
     .replace(/<!-- title -->/g, title);
 
 const saveFile = (filename, contents) => {
@@ -51,5 +52,6 @@ const templatized = templatize(template, {
   title: file.data.title,
   content: file.html,
   author: file.data.author,
+  sub: file.data.sub,
 });
 saveFile(outFilename, templatized);

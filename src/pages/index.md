@@ -1,5 +1,6 @@
 ---
-title: Welcome to Zacket - The simplest static site generator
+title: Elevate Your Web Presence with Zacket
+sub: Where Style Meets Functionality!
 author: Zeeshan Khalid
 ---
 
