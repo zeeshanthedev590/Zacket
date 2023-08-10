@@ -23,7 +23,7 @@ const templatize = (template, { title, content, author, sub }) =>
     //   Add your comments here to add them to the template
     .replace(
       /<!-- default-styles -->/g,
-      `<link rel="stylesheet" href="/styles/styles.css">`
+      `<link rel="stylesheet" href="../styles/styles.css">`
     )
     .replace(
       /<!-- tailwind-cdn -->/g,
